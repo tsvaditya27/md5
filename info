@@ -1,0 +1,11 @@
+javac -d . MD5WebService.java
+
+javac -d . WebServiceServer.java   
+
+java vce.webservices.server.WebServiceServer
+
+wsimport -keep -p vce.webservices.client http://localhost:9898/md5WebService?wsdl
+
+javac -d . WebServiceClient.java
+
+java vce.webservices.client.WebServiceClient
